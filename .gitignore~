@@ -2,8 +2,6 @@
 
 # Mobile Tools for Java (J2ME)
 build/
-app/build/
-library/build/
 
 # Package Files #
 *.jar
