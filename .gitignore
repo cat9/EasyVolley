@@ -6,7 +6,6 @@ app/build/
 library/build/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
