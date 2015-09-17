@@ -59,6 +59,13 @@ mRequestQueue.add(request);
 ```
 -------------------
 ###FileDownload Request
+FileDownload support continue download where you canceled it.
+```
+    DownloadRequest(int method, String url, String fileSavePath, boolean autoResume,
+    Response.Listener<File> listener, Response.ErrorListener errorListener);
+
+```
+
 ```
 String url = "http://yourhost/ff.apk";
 DownloadRequest request = new DownloadRequest(Request.Method.GET, url, "/sdcard/out.apk", false, new Response.Listener<File>() {
