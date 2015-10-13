@@ -98,6 +98,7 @@ or **cancel all request by TAG**,this can be very useful when your **Activity** 
 ```
 mRequestQueue.cancelAll(TAG);
 ```
+if you have any problem,welcome to contact me via my email:lxr309@gmail.com
 
 
 # EasyVolley
@@ -200,4 +201,5 @@ request.cancel();
 ```
 mRequestQueue.cancelAll(TAG);
 ```
+如果有任何问题，欢迎讨论解决：lxr309@gmail.com
 
