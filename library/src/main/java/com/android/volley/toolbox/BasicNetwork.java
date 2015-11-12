@@ -171,7 +171,7 @@ public class BasicNetwork implements Network {
                         throw new ServerError(networkResponse);
                     }
                 } else {
-                    throw new NetworkError(networkResponse);
+                    throw new NetworkError(e);
                 }
             }
         }
