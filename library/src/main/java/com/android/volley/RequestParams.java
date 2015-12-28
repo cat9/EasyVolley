@@ -21,7 +21,9 @@ import java.util.Map;
  */
 public class RequestParams {
 
-    private String charset = HTTP.UTF_8;
+    private static final String DEFAULT_CHARSET = HTTP.UTF_8;
+    
+    private String charset = DEFAULT_CHARSET;
 
     private Map<String,StringContent> stringsParams;
     private Map<String,FileContent> filesParams;
@@ -83,7 +85,7 @@ public class RequestParams {
         public StringContent(String value,String charset){
             this.value=value;
             if(TextUtils.isEmpty(charset)){
-                this.charset=charset;
+                this.charset=DEFAULT_CHARSET;
             }else{
                 this.charset = charset;
             }
@@ -117,7 +119,7 @@ public class RequestParams {
                 this.filename = file.getName();
             }
             if(TextUtils.isEmpty(charset)){
-                this.charset=charset;
+                this.charset=DEFAULT_CHARSET;
             }else{
                 this.charset = charset;
             }
