@@ -358,6 +358,9 @@ public abstract class Request<T> implements Comparable<Request<T>> {
      * @throws AuthFailureError In the event of auth failure
      */
     public Map<String, String> getHeaders() throws AuthFailureError {
+        if(mRequestParams!=null && mRequestParams.getHeadersParams()!=null){
+            return mRequestParams.getHeadersParams();
+        }
         return Collections.emptyMap();
     }
 
