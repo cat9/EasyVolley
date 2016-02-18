@@ -39,7 +39,7 @@ public class JsonArrayRequest extends JsonRequest<JSONArray> {
      * @param errorListener Error listener, or null to ignore errors.
      */
     public JsonArrayRequest(String url, Listener<JSONArray> listener, ErrorListener errorListener) {
-        super(Method.GET, url, null, listener, errorListener);
+        super(Method.GET, url, listener, errorListener);
     }
 
     /**
@@ -53,7 +53,7 @@ public class JsonArrayRequest extends JsonRequest<JSONArray> {
      */
     public JsonArrayRequest(int method, String url, JSONArray jsonRequest,
                             Listener<JSONArray> listener, ErrorListener errorListener) {
-        super(method, url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
+        super(method, url, listener,
                 errorListener);
     }
 
