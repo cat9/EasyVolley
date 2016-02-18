@@ -37,14 +37,12 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * Creates a new request.
      * @param method the HTTP method to use
      * @param url URL to fetch the JSON from
-     * @param jsonRequest A {@link JSONObject} to post with the request. Null is allowed and
-     *   indicates no parameters will be posted along with request.
      * @param listener Listener to receive the JSON response
      * @param errorListener Error listener, or null to ignore errors.
      */
-    public JsonObjectRequest(int method, String url, JSONObject jsonRequest,
+    public JsonObjectRequest(int method, String url,
             Listener<JSONObject> listener, ErrorListener errorListener) {
-        super(method, url, (jsonRequest == null) ? null : jsonRequest.toString(), listener,
+        super(method, url, listener,
                     errorListener);
     }
 
@@ -52,11 +50,11 @@ public class JsonObjectRequest extends JsonRequest<JSONObject> {
      * Constructor which defaults to <code>GET</code> if <code>jsonRequest</code> is
      * <code>null</code>, <code>POST</code> otherwise.
      *
-     * @see #JsonObjectRequest(int, String, JSONObject, Listener, ErrorListener)
+     * @see #JsonObjectRequest(int, String, Listener, ErrorListener)
      */
-    public JsonObjectRequest(String url, JSONObject jsonRequest, Listener<JSONObject> listener,
+    public JsonObjectRequest(String url, Listener<JSONObject> listener,
             ErrorListener errorListener) {
-        this(jsonRequest == null ? Method.GET : Method.POST, url, jsonRequest,
+        this(Method.GET, url,
                 listener, errorListener);
     }
 
