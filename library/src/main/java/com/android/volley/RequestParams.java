@@ -28,6 +28,8 @@ public class RequestParams {
     private Map<String,StringContent> stringsParams;
     private Map<String,FileContent> filesParams;
 
+    private Map<String, String> headersParams;
+
 
     public RequestParams() {
     }
@@ -36,6 +38,17 @@ public class RequestParams {
         if (!TextUtils.isEmpty(charset)) {
             this.charset = charset;
         }
+    }
+
+    public void addHeaderParameter(String name,String value){
+        if (headersParams == null) {
+            headersParams = new HashMap<String, String>();
+        }
+        headersParams.put(name,value);
+    }
+
+    public Map<String,String> getHeadersParams(){
+        return headersParams;
     }
 
     public void addBodyParameter(String name, String value) {
