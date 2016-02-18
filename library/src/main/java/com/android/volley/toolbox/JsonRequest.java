@@ -40,14 +40,12 @@ public abstract class JsonRequest<T> extends Request<T> {
         String.format("application/json; charset=%s", PROTOCOL_CHARSET);
 
     private final Listener<T> mListener;
-    private final String mRequestBody;
 
 
-    public JsonRequest(int method, String url, String requestBody, Listener<T> listener,
+    public JsonRequest(int method, String url, Listener<T> listener,
             ErrorListener errorListener) {
         super(method, url, errorListener);
         mListener = listener;
-        mRequestBody = requestBody;
     }
 
     @Override
